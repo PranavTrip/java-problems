@@ -1,0 +1,24 @@
+package Pepcoding;
+
+import java.util.Scanner;
+
+public class printDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int numberOfDigits=0;
+        int temp=number;
+        while(temp!=0){
+            temp/=10;
+            numberOfDigits++;
+        }
+        int divisor=(int)Math.pow(10,numberOfDigits-1);
+        while(divisor!=0){
+            int q=number/divisor;
+            System.out.println(q);
+            number=number%divisor;
+            divisor/=10;
+
+        }
+    }
+}

@@ -1,0 +1,33 @@
+package Pepcoding;
+
+import java.util.Scanner;
+
+public class PythagoreanTripltes {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int num3 = sc.nextInt();
+        int maximumNumber = num1;
+        if (num2 >= maximumNumber) {
+            maximumNumber = num2;
+        }
+        if (num3 >= maximumNumber) {
+            maximumNumber = num3;
+        }
+
+
+        if (maximumNumber == num1) {
+            boolean flag = ((num2 * num2) + (num3 * num3) == (num1 * num1));
+            System.out.println(flag);
+        }
+        if (maximumNumber == num2) {
+            boolean flag = ((num1 * num1) + (num3 * num3) == (num2 * num2));
+            System.out.println(flag);
+        }
+        if (maximumNumber == num3) {
+            boolean flag = ((num2 * num2) + (num1 * num1) == (num3 * num3));
+            System.out.println(flag);
+        }
+    }
+}

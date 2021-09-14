@@ -1,0 +1,23 @@
+package Pepcoding;
+
+import java.util.Scanner;
+
+public class Inversenumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int inverse = 0;
+        int originalPosition = 1;
+        while (number != 0) {
+            int originalDigit = number % 10;
+            int invertedDigit = originalPosition;
+            int invertedPosition = originalDigit;
+            inverse = inverse + invertedDigit * (int) Math.pow(10, invertedPosition - 1);
+
+            number /= 10;
+            originalPosition++;
+
+        }
+        System.out.println(inverse);
+    }
+}

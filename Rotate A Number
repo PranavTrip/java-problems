@@ -1,0 +1,38 @@
+package Pepcoding;
+
+import java.util.Scanner;
+
+public class Rotatenumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int rotator = sc.nextInt();
+
+        int divisor = 1;
+        int multiplier = 1;
+        int temp = number;
+        int numberOfDigits = 0;
+        while (temp != 0) {
+            temp /= 10;
+            numberOfDigits++;
+        }
+
+        rotator = rotator % numberOfDigits;
+        if (rotator < 0) {
+            rotator = rotator + numberOfDigits;
+        }
+
+        for (int i = 1; i <= numberOfDigits; i++) {
+            if (i <= rotator) {
+                divisor = divisor * 10;
+            } else {
+                multiplier = multiplier * 10;
+            }
+        }
+        int quotient = number / divisor;
+        int remainder = number % divisor;
+
+        int rotatedNumber = remainder * multiplier + quotient;
+        System.out.println(rotatedNumber);
+    }
+}
